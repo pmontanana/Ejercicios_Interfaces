@@ -1,5 +1,5 @@
 package Futbol;
-public class Futbolista implements Comparable{
+public class Futbolista implements Comparable {
     int edad, nGoles;
     String nombre, apellidos, dni;
 
