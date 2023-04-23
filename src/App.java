@@ -1,11 +1,15 @@
 
 
+import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Collections;
+import java.util.function.Function;
 
 import Futbol.ComparaEdad;
 import Futbol.ComparaNombres;
 import Futbol.Futbolista;
 import Futbol.OrdenarEdadNombre;
+import Socio.Socio;
 
 public class App {
     public static void titulo(String texto) {
@@ -44,7 +48,32 @@ public class App {
         imprimeArray(t);
 
     }
+
+    public static void pruebaSocio(){
+        // ArrayList<Socio> lista = new ArrayList<Socio>(Arrays.asList(
+        //     new Socio("Juan", 12, 83923),
+        //     new Socio("Pedro", 2, 83924), 
+        //     new Socio("Antonio", 7, 83921)
+        // ));
+        ArrayList<Socio> lista = new ArrayList<Socio>();
+        lista.add(new Socio("Juan", 12, 83923));
+        lista.add(new Socio("Pedro", 2, 83924));
+        lista.add(new Socio("Antonio", 7, 83921));
+        titulo("Antes de ordenación");
+        imprimeSocios(lista);
+        titulo("Después de ordenación");
+        Collections.sort(lista);
+        imprimeSocios(lista);
+
+    }
+
+    public static void imprimeSocios(ArrayList<Socio> lista){
+        for(Socio socio: lista){
+            System.out.println(socio);
+        }
+    }
     public static void main(String[] args){
-        pruebaFutbolistas();
+        //pruebaFutbolistas();
+        pruebaSocio();
     }
 }
