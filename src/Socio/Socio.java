@@ -15,6 +15,10 @@ public class Socio implements Comparable{
         return edad;
     }
 
+    public long getNumeroSocio() {
+        return numeroSocio;
+    }
+
     public boolean equals(Socio temp){
         return edad == temp.edad;
     }
