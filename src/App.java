@@ -9,7 +9,7 @@ import Futbol.ComparaEdad;
 import Futbol.ComparaNombres;
 import Futbol.Futbolista;
 import Futbol.OrdenarEdadNombre;
-import Socio.Socio;
+import Socio.*;
 
 public class App {
     public static void titulo(String texto) {
@@ -57,13 +57,17 @@ public class App {
         // ));
         ArrayList<Socio> lista = new ArrayList<Socio>();
         lista.add(new Socio("Juan", 12, 83923));
-        lista.add(new Socio("Pedro", 2, 83924));
+        lista.add(new Socio("Pedro", 7, 83924));
         lista.add(new Socio("Antonio", 7, 83921));
         titulo("Antes de ordenación");
         imprimeSocios(lista);
         titulo("Después de ordenación");
         Collections.sort(lista);
         imprimeSocios(lista);
+        titulo("Después de ordenación por edad y numero de socio");
+        Collections.sort(lista, new OrdenaSociosEdad());
+        imprimeSocios(lista);
+
 
     }
 
