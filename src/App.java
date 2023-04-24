@@ -4,12 +4,8 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
 import java.util.function.Function;
-
-import Futbol.ComparaEdad;
-import Futbol.ComparaNombres;
-import Futbol.Futbolista;
-import Futbol.OrdenarEdadNombre;
-import Socio.*;
+import Futbol.*;
+import Socio.*; 
 
 public class App {
     public static void titulo(String texto) {
@@ -56,9 +52,9 @@ public class App {
         //     new Socio("Antonio", 7, 83921)
         // ));
         ArrayList<Socio> lista = new ArrayList<Socio>();
-        lista.add(new Socio("Juan", 12, 83923));
-        lista.add(new Socio("Pedro", 7, 83924));
-        lista.add(new Socio("Antonio", 7, 83921));
+        lista.add(new Socio("Juan", 12, 839237, "23/12/2004"));
+        lista.add(new Socio("Pedro", 7, 83924, "17/10/2001"));
+        lista.add(new Socio("Antonio", 7, 83921, "06/02/1967"));
         titulo("Antes de ordenación");
         imprimeSocios(lista);
         titulo("Después de ordenación");
@@ -66,6 +62,15 @@ public class App {
         imprimeSocios(lista);
         titulo("Después de ordenación por edad y numero de socio");
         Collections.sort(lista, new OrdenaSociosEdad());
+        imprimeSocios(lista);
+        titulo("Después de ordenación por fecha de nacimiento");
+        Collections.sort(lista, new ComparadorFechasNacimiento());
+        imprimeSocios(lista);
+        titulo("Después de ordenación por orden alfabetico");
+        Collections.sort(lista, new OrdenaSociosAlfabetico());
+        imprimeSocios(lista);
+        titulo("Después de ordenación por orden alfabetico inverso");
+        Collections.sort(lista, new OrdenadorSociosAlafabeticoInvrso());
         imprimeSocios(lista);
 
 

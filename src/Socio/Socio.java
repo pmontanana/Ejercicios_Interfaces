@@ -4,11 +4,21 @@ public class Socio implements Comparable{
     String nombre;
     int edad;
     long numeroSocio;
+    String fechaNacimiento;
 
-    public Socio(String nombre, int edad, long numeroSocio){
+    public Socio(String nombre, int edad, long numeroSocio, String fechaNacimiento){
         this.nombre = nombre;
         this.edad = edad;
         this.numeroSocio = numeroSocio;
+        this.fechaNacimiento = fechaNacimiento;
+    }
+
+    public String getNombre() {
+        return nombre;
+    }
+
+    public String getFechaNacimiento() {
+        return fechaNacimiento;
     }
 
     public int getEdad() {
@@ -23,7 +33,7 @@ public class Socio implements Comparable{
         return edad == temp.edad;
     }
     public String toString() {
-        return String.format("%s %d %s", nombre, edad, numeroSocio);
+        return String.format("%s %d %s %s", nombre, edad, numeroSocio, fechaNacimiento);
     }
 
     @Override
